@@ -1,13 +1,13 @@
 import React from 'react';
-// import Avatar from '../components/Avatars/Avatar';
+import Avatar from '../components/Avatars/Avatar';
 import { Link } from 'react-router';
-// <Avatar image={user.image} />
+
 const ActiveUser = ({ user, details }) => {
   const link = details && user ? <Link to={`/user/${user.id}`}>Details</Link> : ""
   if (user) {
     return (<div className="col-sm-4 col-md-3 col-lg-2">
       <div className="thumbnail">
-        
+        <Avatar image={user.avatar} />
         <div className="thumbnail-caption">
           <h3>{user.name}</h3>
           <table className="user-info table table-responsive">

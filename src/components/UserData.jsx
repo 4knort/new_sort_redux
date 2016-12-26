@@ -1,10 +1,10 @@
 import React from 'react';
-// import Avatar from './Avatars/Avatar';
-// <Avatar image={item.image} />
+import Avatar from './Avatars/Avatar';
+
 const UserData = ({ item, onChange }) => (
   <tr onClick={onChange}>
     <td>
-      
+      <Avatar image={item.avatar} />
     </td>
     <td>{item.name}</td>
     <td>{item.age}</td>
