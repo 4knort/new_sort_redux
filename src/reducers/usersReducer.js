@@ -4,9 +4,11 @@ const initialState = {
   active: {},
   initialList: [],
   modifiedList: [],
+  ascName: true,
+  ascAge: true,
 };
 
-function nameComparator(a, b) {
+function nameComparatorUp(a, b) {
   const nameA = a.name.toUpperCase(); // ignore upper and lowercase
   const nameB = b.name.toUpperCase(); // ignore upper and lowercase
 
@@ -19,6 +21,10 @@ function nameComparator(a, b) {
 
   // names must be equal
   return 0;
+}
+
+function nameComparatorDown(a, b) {
+  return -nameComparatorUp(a, b)
 }
 
 function sortSearch(items, query) {
@@ -50,30 +56,40 @@ export default function users(state = initialState, action) {
       };
     }
 
-    case types.SORT_ASC_NAME:
+    case types.SORT_NAME:
+    if(state.ascName === true) {
       return {
         ...state,
-        initialList: state.initialList.slice(0).sort(nameComparator),
-        modifiedList: state.modifiedList.slice(0).sort(nameComparator),
+        initialList: state.initialList.slice(0).sort(nameComparatorUp),
+        modifiedList: state.modifiedList.slice(0).sort(nameComparatorUp),
+        ascName: false,
       };
-    case types.SORT_DESC_NAME:
+    } else {
       return {
         ...state,
-        initialList: state.initialList.slice(0).reverse(),
-        modifiedList: state.modifiedList.slice(0).reverse(),
+        initialList: state.initialList.slice(0).sort(nameComparatorDown),
+        modifiedList: state.modifiedList.slice(0).sort(nameComparatorDown),
+        ascName: true,
       };
-    case types.SORT_ASC_AGE:
+    }
+      
+    case types.SORT_AGE:
+    if(state.ascAge === true) {
       return {
         ...state,
         initialList: state.initialList.slice(0).sort((a, b) => a.age - b.age),
         modifiedList: state.modifiedList.slice(0).sort((a, b) => a.age - b.age),
+        ascAge: false,
       };
-    case types.SORT_DESC_AGE:
+    } else {
       return {
         ...state,
-        initialList: state.initialList.slice(0).reverse(),
-        modifiedList: state.modifiedList.slice(0).reverse(),
+        initialList: state.initialList.slice(0).sort((a, b) => b.age - a.age),
+        modifiedList: state.modifiedList.slice(0).sort((a, b) => b.age - a.age),
+        ascAge: true,
       };
+    }
+      
 
     default: {
       return state;

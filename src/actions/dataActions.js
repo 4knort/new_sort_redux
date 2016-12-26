@@ -23,29 +23,19 @@ export function setActiveUser(user) {
   };
 }
 
-export function sortNameAsc() {
+export function sortName() {
   return {
-    type: types.SORT_ASC_NAME,
+    type: types.SORT_NAME,
   };
 }
 
-export function sortNameDesc() {
+
+export function sortAge() {
   return {
-    type: types.SORT_DESC_NAME,
+    type: types.SORT_AGE,
   };
 }
 
-export function sortAgeAsc() {
-  return {
-    type: types.SORT_ASC_AGE,
-  };
-}
-
-export function sortAgeDesc() {
-  return {
-    type: types.SORT_DESC_AGE,
-  };
-}
 
 export function findName(query) {
   return {
