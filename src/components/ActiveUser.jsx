@@ -33,7 +33,7 @@ const ActiveUser = ({ user, details }) => {
                   Favourite animal
                 </td>
                 <td>
-                  {user.image}
+                  {user.avatar}
                 </td>
               </tr>
             </tbody>
