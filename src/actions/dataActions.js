@@ -36,6 +36,13 @@ export function sortAge() {
   };
 }
 
+export function setDirection(direction, directionType) {
+  return {
+    type: types.SET_DIRECTION,
+    payload: direction,
+    directionType: directionType,
+  };
+}
 
 export function findName(query) {
   return {

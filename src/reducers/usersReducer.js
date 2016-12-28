@@ -48,6 +48,21 @@ export default function users(state = initialState, action) {
       };
     }
 
+    case types.SET_DIRECTION: {
+      if (action.directionType === "name") {
+        return {
+          ...state,
+          ascName: action.payload,
+        };
+      } else {
+        return {
+          ...state,
+          ascAge: action.payload,
+        };
+      }
+      
+    }
+
     case types.FIND_NAME: {
       return {
         ...state,
