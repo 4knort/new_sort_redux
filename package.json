@@ -16,10 +16,11 @@
     "lint:eslint-fix": "eslint src --ext .js --ext .jsx --fix",
     "lint:eslint-cache": "eslint src --ext .js --ext .jsx --cache",
     "lint:stylelint": "stylelint **/*.scss",
-    "pages:build": "npm run clean && npm run storybook:build && cross-env NODE_ENV=production BUILD=pages webpack --progress --colors",
+    "pages:build": "npm run clean && npm run storybook:build && npm run presets && cross-env NODE_ENV=production BUILD=pages webpack --progress --colors",
     "pages:deploy": "npm run pages:build && gh-pages -d public",
     "storybook:start": "start-storybook -p 3003 -c storybook",
-    "storybook:build": "build-storybook -c storybook -o public/storybook"
+    "storybook:build": "build-storybook -c storybook -o public/storybook",
+    "presets": "node scripts/presets"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,7 @@
     "breakpoint-sass": "^2.7.1",
     "classnames": "^2.2.5",
     "lodash": "^4.17.2",
+    "dreamjs": "^0.1.7",
     "node-uuid": "^1.4.7",
     "normalize.css": "^5.0.0",
     "react": "^15.4.1",
