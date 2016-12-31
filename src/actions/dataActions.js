@@ -10,7 +10,7 @@ function setUsers(data) {
 
 export function fetchUsers() {
   return function thunkFetch(dispatch) {
-    axios.get('/data.json').then(response => {
+    axios.get('./data.json').then(response => {
       dispatch(setUsers(response.data));
     });
   };
