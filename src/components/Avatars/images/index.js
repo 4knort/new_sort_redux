@@ -8,5 +8,5 @@ export penguin from './penguin.svg';
 export pig from './pig.svg';
 export raccoon from './raccoon.svg';
 export sheep from './sheep.svg';
-
+export react from './react.svg';
 
