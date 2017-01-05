@@ -124,9 +124,9 @@ module.exports = {
     ],
 
   output: {
-    path: path.join(__dirname, 'public'),
+    path: path.join(__dirname, 'public//'),
     filename: 'bundle.js',
-    publicPath: pagesBuild ? 'new_sort_redux' : '/',
+    publicPath: pagesBuild ? '/new_sort_redux//' : '/',
   },
 
   resolve: {
