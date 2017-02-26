@@ -24,7 +24,7 @@ function nameComparatorUp(a, b) {
 }
 
 function nameComparatorDown(a, b) {
-  return -nameComparatorUp(a, b)
+  return -nameComparatorUp(a, b);
 }
 
 function sortSearch(items, query) {
@@ -48,21 +48,6 @@ export default function users(state = initialState, action) {
       };
     }
 
-    case types.SET_DIRECTION: {
-      if (action.directionType === "name") {
-        return {
-          ...state,
-          ascName: action.payload,
-        };
-      } else {
-        return {
-          ...state,
-          ascAge: action.payload,
-        };
-      }
-      
-    }
-
     case types.FIND_NAME: {
       return {
         ...state,
@@ -72,40 +57,35 @@ export default function users(state = initialState, action) {
     }
 
     case types.SORT_NAME:
-    if(state.ascName === true) {
-      return {
-        ...state,
-        initialList: state.initialList.slice(0).sort(nameComparatorUp),
-        modifiedList: state.modifiedList.slice(0).sort(nameComparatorUp),
-        ascName: false,
-      };
-    } else {
+      if (state.ascName === true) {
+        return {
+          ...state,
+          initialList: state.initialList.slice(0).sort(nameComparatorUp),
+          modifiedList: state.modifiedList.slice(0).sort(nameComparatorUp),
+          ascName: false,
+        };
+      }
       return {
         ...state,
         initialList: state.initialList.slice(0).sort(nameComparatorDown),
         modifiedList: state.modifiedList.slice(0).sort(nameComparatorDown),
         ascName: true,
       };
-    }
-      
     case types.SORT_AGE:
-    if(state.ascAge === true) {
-      return {
-        ...state,
-        initialList: state.initialList.slice(0).sort((a, b) => a.age - b.age),
-        modifiedList: state.modifiedList.slice(0).sort((a, b) => a.age - b.age),
-        ascAge: false,
-      };
-    } else {
+      if (state.ascAge === true) {
+        return {
+          ...state,
+          initialList: state.initialList.slice(0).sort((a, b) => a.age - b.age),
+          modifiedList: state.modifiedList.slice(0).sort((a, b) => a.age - b.age),
+          ascAge: false,
+        };
+      }
       return {
         ...state,
         initialList: state.initialList.slice(0).sort((a, b) => b.age - a.age),
         modifiedList: state.modifiedList.slice(0).sort((a, b) => b.age - a.age),
         ascAge: true,
       };
-    }
-      
-
     default: {
       return state;
     }

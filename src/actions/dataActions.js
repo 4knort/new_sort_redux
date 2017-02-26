@@ -1,7 +1,7 @@
 import axios from 'axios';
 import * as types from 'constants/actionTypes';
 
-function setUsers(data) {
+export function setUsers(data) {
   return {
     type: types.SET_USERS,
     payload: data,
@@ -36,17 +36,10 @@ export function sortAge() {
   };
 }
 
-export function setDirection(direction, directionType) {
-  return {
-    type: types.SET_DIRECTION,
-    payload: direction,
-    directionType: directionType,
-  };
-}
-
 export function findName(query) {
   return {
     type: types.FIND_NAME,
     payload: query,
   };
 }
+

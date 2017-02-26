@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Link } from 'react-router';
-import ActiveUser from './ActiveUser';
 import * as dataActions from 'actions/dataActions';
+import ActiveUser from './ActiveUser';
 
 @withRouter
 @connect(state => ({

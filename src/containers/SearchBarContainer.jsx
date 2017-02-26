@@ -14,5 +14,3 @@ SearchBarContainer.propTypes = {
 export default connect(state => ({
   modifiedList: state.users.modifiedList,
 }), dataActions)(SearchBarContainer);
-
-

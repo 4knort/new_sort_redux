@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Icon } from 'ui/Icon';
 import * as dataActions from 'actions/dataActions';
 import SearchBarContainer from '../containers/SearchBarContainer';
 import ToolBar from '../components/ToolBar';

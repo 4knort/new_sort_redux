@@ -1,9 +1,9 @@
 import React from 'react';
-import Avatar from '../components/Avatars/Avatar';
 import { Link } from 'react-router';
+import Avatar from '../components/Avatars/Avatar';
 
 const ActiveUser = ({ user, details }) => {
-  const link = details && user ? <Link to={`/user/${user.id}`}>Details</Link> : ""
+  const link = details && user ? <Link to={`/user/${user.id}`}>Details</Link> : '';
   if (user) {
     return (<div className="col-sm-4 col-md-3 col-lg-2">
       <div className="thumbnail">
@@ -46,11 +46,10 @@ const ActiveUser = ({ user, details }) => {
         </div>
       </div>
     </div>);
-  } else {
-    return (<div className="col-sm-4 col-md-3 col-lg-2">
-      <h3>Nothing found! :(</h3>
-    </div>);
   }
+  return (<div className="col-sm-4 col-md-3 col-lg-2">
+    <h3>Nothing found! :(</h3>
+  </div>);
 };
 
 export default ActiveUser;
