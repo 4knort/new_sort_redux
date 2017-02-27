@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import * as dataActions from '../actions/dataActions';
 
-const ToolBar = ({ sortName, sortAge }) => (
+export const ToolBar = ({ sortName, sortAge }) => (
   <div className="row">
     <div className="col-sm-12">
       <div className="toolbar">

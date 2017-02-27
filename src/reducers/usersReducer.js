@@ -51,8 +51,8 @@ export default function users(state = initialState, action) {
     case types.FIND_NAME: {
       return {
         ...state,
-        modifiedList: sortSearch(state.initialList, action.payload),
-        active: sortSearch(state.initialList, action.payload)[0],
+        modifiedList: sortSearch(state.initialList.slice(0), action.payload),
+        active: sortSearch(state.initialList.slice(0), action.payload)[0],
       };
     }
 

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import UserData from '../components/UserData';
 import * as dataActions from '../actions/dataActions';
 
-const UserList = ({ users, setActiveUser }) => {
+export const UserList = ({ users, setActiveUser }) => {
   const tableItem = users.map(
     (item) => (
       <UserData

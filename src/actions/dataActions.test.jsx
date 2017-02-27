@@ -3,9 +3,16 @@ import * as dataActions from './dataActions';
 import * as types from '../constants/actionTypes';
 
 test('setActiveUserAction testing', (t) => {
-  const setActiveUserAction = dataActions.setActiveUser({});
-  t.equal(setActiveUserAction.type, types.SET_ACTIVE_USER, 'correct type of setActiveUser action');
-  t.equal(typeof setActiveUserAction.payload, 'object', 'correct typeof of setActiveUser action payload');
+  const obj = {
+    name: 'john',
+    age: '18',
+  };
+  const expectedAction = {
+    type: types.SET_ACTIVE_USER,
+    payload: obj,
+  };
+
+  t.deepEqual(dataActions.setActiveUser(obj), expectedAction, 'correct action returned');
 
   t.end();
 });
@@ -25,17 +32,32 @@ test('sortAgeAction testing', (t) => {
 });
 
 test('setUsersAction testing', (t) => {
-  const setUsersAction = dataActions.setUsers([]);
-  t.equal(setUsersAction.type, types.SET_USERS, 'correct type of setUsersAction action');
-  t.equal(typeof setUsersAction.payload, 'object', 'correct payload of findNameAction action');
+  const arr = [{
+    name: 'john',
+    age: '18',
+  },
+  {
+    name: 'alice',
+    age: '19',
+  }];
+  const expectedAction = {
+    type: types.SET_USERS,
+    payload: arr,
+  };
+
+  t.deepEqual(dataActions.setUsers(arr), expectedAction, 'correct action returned');
 
   t.end();
 });
 
 test('findNameAction testing', (t) => {
-  const findNameAction = dataActions.findName('query');
-  t.equal(findNameAction.type, types.FIND_NAME, 'correct type of findNameAction action');
-  t.equal(findNameAction.payload, 'query', 'correct payload of findNameAction action');
+  const query = 'query';
+  const expectedAction = {
+    type: types.FIND_NAME,
+    payload: query,
+  };
 
+  t.deepEqual(dataActions.findName(query), expectedAction, 'correct action returned');
+  
   t.end();
 });
