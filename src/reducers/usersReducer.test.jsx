@@ -15,16 +15,6 @@ const testingArr = [{ name: 'john', age: '19' }, { name: 'alice', age: '18' }];
 test('Users Reducer with uknown type', (t) => {
   t.deepEqual(usersReducer(undefined, {}), initialState, 'handles action with uknown type');
 
-  
-
-  // const actionSetActiveUser = { type: types.SET_ACTIVE_USER, payload: { some: 'any' } };
-  // t.equal(JSON.stringify(usersReducer(initialState, actionSetActiveUser)), JSON.stringify({
-  //   ...initialState,
-  //   active: { some: 'any' },
-  // }), 'handles action SetActiveUser');
-
-  // const actionFindName = { type: types.FIND_NAME, payload: 'query' };
-  // t.equal(JSON.stringify(usersReducer(initialState, actionFindName)), )
   t.end();
 });
 
