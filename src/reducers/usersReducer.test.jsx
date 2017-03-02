@@ -101,8 +101,8 @@ test('Users Reducer Sort Name desc', (t) => {
 
   const modifiedState = {
     active: {},
-    initialList: testingArr.slice(0),
-    modifiedList: testingArr.slice(0),
+    initialList: testingArr.reverse(),
+    modifiedList: testingArr.reverse(),
     ascName: false,
     ascAge: true,
   };
@@ -146,16 +146,16 @@ test('Users Reducer Sort Age desc', (t) => {
 
   const modifiedState = {
     active: {},
-    initialList: testingArr,
-    modifiedList: testingArr,
+    initialList: testingArr.reverse(),
+    modifiedList: testingArr.reverse(),
     ascName: true,
     ascAge: false,
   };
 
   t.deepEqual(usersReducer(modifiedState, actionSortAge), {
     ...modifiedState,
-    initialList: testingArr,
-    modifiedList: testingArr,
+    initialList: testingArr.slice(0),
+    modifiedList: testingArr.slice(0),
     ascAge: true,
   }, 'handled sort age action desc');
 
